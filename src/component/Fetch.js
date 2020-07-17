@@ -35,7 +35,15 @@ class Fetch extends React.Component {
             answer2: answerTwo
         })
     }
-
+    async getThirdData(){
+        const res = await axios.get("http://www.anapioficeandfire.com/api/houses/229")
+        const answerThree = res.data.coatOfArms
+        console.log(answerThree);
+        this.setState({
+            answer3: answerThree
+        })
+    }
+    
     
     componentDidMount () {
         this.getFirstData();
