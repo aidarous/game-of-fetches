@@ -73,6 +73,7 @@ class Fetch extends React.Component {
         this.getThirdData();
         this.getFourthData();
         this.getFifthData();
+        this.getSixthData();
     }
     render() {
         return (
@@ -87,6 +88,8 @@ class Fetch extends React.Component {
                 <h2>{this.state.answer4}</h2>
                 <h1>5. What is Robert Baratheon's second alias?</h1>
                 <h2>{this.state.answer5}</h2>
+                <h1> 6.What's the name of the founder of House Stark?</h1>
+                <h2> {this.state.answer6}</h2>
 
             </div>
         )
