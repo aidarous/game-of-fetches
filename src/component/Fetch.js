@@ -43,7 +43,14 @@ class Fetch extends React.Component {
             answer3: answerThree
         })
     }
-
+    async getFourthData(){
+        const res = await axios.get("http://www.anapioficeandfire.com/api/houses/17")
+        const answerFour = res.data.seats[1]
+        console.log(answerFour);
+        this.setState({
+            answer4: answerFour
+        })
+    }
     
     componentDidMount () {
         this.getFirstData();
@@ -59,6 +66,7 @@ class Fetch extends React.Component {
                 <h2> {this.state.answer2}</h2>
                 <h1>3. What's the coat of arms of House Lannister?</h1>
                 <h2>{this.state.answer3}</h2>
+
             </div>
         )
     }
