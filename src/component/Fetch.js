@@ -27,6 +27,14 @@ class Fetch extends React.Component {
             
         })
     }
+    async getSecondData(){
+        const res = await axios.get("http://www.anapioficeandfire.com/api/houses/378")
+        const answerTwo = res.data.region
+        console.log(answerTwo);
+        this.setState({
+            answer2: answerTwo
+        })
+    }
 
     
     componentDidMount () {
