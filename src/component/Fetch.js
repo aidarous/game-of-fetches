@@ -39,14 +39,15 @@ class Fetch extends React.Component {
     
     componentDidMount () {
         this.getFirstData();
-        
+        this.getSecondData();
     }
     render() {
         return (
             <div>
                 <h1>1. Where was Margaery Tyrell born?</h1>
                 <h2> {this.state.answer1}</h2>
-                
+                <h1>2.  What region is House Targaryen in?</h1>
+                <h2> {this.state.answer2}</h2>
             </div>
         )
     }
