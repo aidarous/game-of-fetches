@@ -64,6 +64,7 @@ class Fetch extends React.Component {
         this.getSecondData();
         this.getThirdData();
         this.getFourthData();
+        this.getFifthData();
     }
     render() {
         return (
@@ -76,6 +77,8 @@ class Fetch extends React.Component {
                 <h2>{this.state.answer3}</h2>
                 <h1>4. What is the second seat of House Baratheon</h1>
                 <h2>{this.state.answer4}</h2>
+                <h1>5. What is Robert Baratheon's second alias?</h1>
+                <h2>{this.state.answer5}</h2>
 
             </div>
         )
