@@ -23,7 +23,7 @@ class Fetch extends React.Component {
         const answerOne =  res.data.born;
         
         this.setState({
-           answer1: answerOne
+            answer1: answerOne
             
         })
     }
@@ -67,6 +67,19 @@ class Fetch extends React.Component {
             answer6: answerSix
         })
     }
+    async getSeventhData(){
+        const pov = await axios.get("https://www.anapioficeandfire.com/api/books/1");
+        const pov2 = await axios.get("https://www.anapioficeandfire.com/api/books/2");
+        const pov3 = await axios.get("https://www.anapioficeandfire.com/api/books/3");
+        const answerSeven = pov.data.name
+        const answerEight = pov2.data.name
+        const answerNine = pov3.data.name
+        this.setState({
+            answer7: answerSeven,
+            answer8: answerEight,
+            answer9: answerNine
+        })
+    }
     componentDidMount () {
         this.getFirstData();
         this.getSecondData();
@@ -74,6 +87,7 @@ class Fetch extends React.Component {
         this.getFourthData();
         this.getFifthData();
         this.getSixthData();
+        this.getSeventhData();
     }
     render() {
         return (
@@ -90,6 +104,10 @@ class Fetch extends React.Component {
                 <h2>{this.state.answer5}</h2>
                 <h1> 6.What's the name of the founder of House Stark?</h1>
                 <h2> {this.state.answer6}</h2>
+                <h1>7. What are the title of Catelyn Stark's three POV books?</h1>
+                <h2>{this.state.answer7}</h2>
+                <h2>{this.state.answer8}</h2>
+                <h2>{this.state.answer9}</h2>
 
             </div>
         )
