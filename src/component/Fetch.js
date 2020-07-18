@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 
 class Fetch extends React.Component {
+    // initializes answers to be used for the api
     constructor(props) {
         super(props);
 
@@ -17,24 +18,27 @@ class Fetch extends React.Component {
             answer9: "",
         }
     }
-
+    // function for first question
     async getFirstData(){
         const res = await axios.get("http://anapioficeandfire.com/api/characters/16");
         const answerOne =  res.data.born;
-        
+        // updates the state of answer1
         this.setState({
             answer1: answerOne
             
         })
     }
+    // function for second question
     async getSecondData(){
         const res = await axios.get("http://www.anapioficeandfire.com/api/houses/378")
         const answerTwo = res.data.region
         console.log(answerTwo);
+        // updates state
         this.setState({
             answer2: answerTwo
         })
     }
+    // function for third question
     async getThirdData(){
         const res = await axios.get("http://www.anapioficeandfire.com/api/houses/229")
         const answerThree = res.data.coatOfArms
@@ -43,30 +47,37 @@ class Fetch extends React.Component {
             answer3: answerThree
         })
     }
+    // function for fourth question
     async getFourthData(){
         const res = await axios.get("http://www.anapioficeandfire.com/api/houses/17")
         const answerFour = res.data.seats[1]
         console.log(answerFour);
+        // updates state
         this.setState({
             answer4: answerFour
         })
     }
+    // fetches data for fifth question
     async getFifthData(){
         const res = await axios.get("https://www.anapioficeandfire.com/api/characters/901")
         const answerFive = res.data.aliases[1]
         console.log(answerFive);
+        //updates state
         this.setState({
             answer5: answerFive
         })
     }
+    // fetches data for sixth question
     async getSixthData(){
         const res = await axios.get("https://anapioficeandfire.com/api/characters/209")
         const answerSix = res.data.name
         console.log(answerSix)
+        // updates state
         this.setState({
             answer6: answerSix
         })
     }
+    // fetches data for seventh question
     async getSeventhData(){
         const pov = await axios.get("https://www.anapioficeandfire.com/api/books/1");
         const pov2 = await axios.get("https://www.anapioficeandfire.com/api/books/2");
@@ -74,6 +85,7 @@ class Fetch extends React.Component {
         const answerSeven = pov.data.name
         const answerEight = pov2.data.name
         const answerNine = pov3.data.name
+        // updates state
         this.setState({
             answer7: answerSeven,
             answer8: answerEight,
